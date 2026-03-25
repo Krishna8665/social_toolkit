@@ -1,5 +1,6 @@
 // src/routes/test.routes.ts
 import { Router, Request, Response, NextFunction } from "express";
+import { checkAiAccess } from "../middleware/plan.middleware.js";
 
 const router = Router();
 
@@ -24,5 +25,24 @@ router.get("/protected", protect, (req: Request, res: Response) => {
     user: (req as any).user,
   });
 });
+
+router.get(
+  "/ai-test",
+  protect,
+  checkAiAccess,
+  (req: Request, res: Response) => {
+    const isMock = (req as any).isMock === true;
+    const remainingCredits = (req as any).remainingCredits;
+    const user = (req as any).user;
+
+    res.json({
+      success: true,
+      message: isMock ? "Mock AI allowed (free tier)" : "Real AI allowed",
+      user,
+      plan: user?.plan ?? "n/a",
+      remainingCredits: remainingCredits ?? "unlimited",
+    });
+  },
+);
 
 export default router;
