@@ -27,7 +27,6 @@ app.use("/api/test", testRoutes);
 
 // Note: Google OAuth routes are handled in `src/routes/auth.routes.ts`
 
-// ... existing imports
 
 // ... after app = express()
 app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5000" }));
