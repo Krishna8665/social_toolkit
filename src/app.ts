@@ -25,9 +25,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use("/api/test", testRoutes);
 
-// Note: Google OAuth routes are handled in `src/routes/auth.routes.ts`
-
-
 // ... after app = express()
 app.use(cors({ origin: process.env.FRONTEND_URL || "http://localhost:5000" }));
 app.use(express.json());
