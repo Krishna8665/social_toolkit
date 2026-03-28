@@ -40,4 +40,3 @@ app.get("/api/health", (req, res) => {
   res.json({ status: "ok", dbConnected: mongoose.connection.readyState === 1 });
 });
 export default app;
-//
