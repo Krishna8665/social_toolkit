@@ -1,7 +1,7 @@
 // src/index.ts
 import express, { Request, Response } from "express";
 import mongoose from "mongoose";
-import passport from "./config/passport.js"; // note: import after db connect
+import passport from "./config/passport.js"; 
 import session from "express-session"; // we'll use temporary session for OAuth flow
 import authRoutes from "./routes/auth.routes.js";
 import cors from "cors";
