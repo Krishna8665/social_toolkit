@@ -60,7 +60,7 @@ const userSchema = new Schema<IUser>(
     },
   },
   {
-    timestamps: true, // automatically adds createdAt + updatedAt
+    timestamps: true, 
   },
 );
 
