@@ -1,9 +1,6 @@
 // src/server.ts
-// Ensure environment variables are loaded before importing any modules that rely on them.
 import dotenv from "dotenv";
 dotenv.config();
-
-// Use dynamic imports after dotenv.config() so modules see populated process.env
 const { default: app } = await import("./app.js");
 const { default: connectToDatabase } = await import("./config/db.js");
 
