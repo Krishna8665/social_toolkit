@@ -19,9 +19,6 @@ export const checkAiAccess = async (
   res: Response,
   next: NextFunction,
 ) => {
-  // We attach runtime properties to `req` below using `as any` to avoid
-  // requiring a global type declaration file. If you prefer proper typing,
-  // add `src/types/express.d.ts` and augment the Express Request interface.
 
   try {
     if (!req.user) {
