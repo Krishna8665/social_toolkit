@@ -2,9 +2,7 @@
 import { Request, Response, NextFunction } from "express";
 import { User } from "../models/Users.js";
 
-// Note: We use `req as any` below when attaching runtime properties to avoid
-// having to add a global declaration file. If you prefer, we can add
-// `src/types/express.d.ts` with proper augmentation instead.
+
 
 export interface AiRequestBody {
   // common fields for caption/hashtags/etc.
