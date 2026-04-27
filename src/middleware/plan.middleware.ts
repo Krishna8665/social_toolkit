@@ -11,7 +11,6 @@ export interface AiRequestBody {
   topic?: string;
   tone?: string;
   keyword?: string;
-  // add others as needed
 }
 
 export const checkAiAccess = async (
